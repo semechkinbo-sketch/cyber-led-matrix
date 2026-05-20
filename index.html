@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Ultimate Cyber LED Matrix v3.0</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div class="app-container">
+		
+		<!-- Светодиодное окно с полной блокировкой зума -->
+		<div class="led-window-wrapper" id="fullscreen-target">
+			<div class="led-screen" id="led-screen-node">
+				<div class="marquee-wrapper">
+					<div class="led-text" id="led-output">SYSTEM ONLINE //</div>
+				</div>
+				<!-- Маска круглых светодиодов -->
+				<div class="led-grid-overlay" id="led-overlay"></div>
+				
+				<div class="fullscreen-hint">Дважды тапните для Fullscreen</div>
+			</div>
+		</div>
+
+		<!-- Премиальная панель управления -->
+		<div class="control-panel">
+			<div class="panel-header">
+				<h2>LED MATRIX CORE v3.0 // PRO</h2>
+				<div class="status-indicator" id="status-node">READY</div>
+			</div>
+
+			<!-- Быстрые Пресеты -->
+			<div class="control-group">
+				<label>Быстрые Кибер-Темы</label>
+				<div class="presets-row">
+					<button class="preset-btn" data-preset="matrix">🟢 Matrix</button>
+					<button class="preset-btn" data-preset="cyber">🟡 Cyberpunk</button>
+					<button class="preset-btn" data-preset="danger">🔴 ALERT ⚠️</button>
+				</div>
+			</div>
+
+			<!-- Строка ввода текста -->
+			<div class="control-group">
+				<label for="text-input">Текст трансляции (Поддерживает Emoji 🔥)</label>
+				<input type="text" id="text-input" value="SYSTEM ONLINE //" maxlength="60" placeholder="Введите сообщение...">
+			</div>
+
+			<!-- Блок выбора цвета и шрифта -->
+			<div class="control-row">
+				<div class="control-group">
+					<label>Цвет диодов</label>
+					<div class="custom-color-picker" id="color-trigger">
+						<div class="color-preview" id="color-preview-node"></div>
+						<span id="color-hex-text">#00ffcc</span>
+						<input type="color" id="color-picker" value="#00ffcc">
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label for="font-select">Типографика матрицы</label>
+					<div class="select-wrapper">
+						<select id="font-select">
+							<option value="'Courier New', monospace">Classic Matrix</option>
+							<option value="'Impact', sans-serif">Neon Cyber</option>
+							<option value="system-ui, sans-serif">Modern Tech</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<!-- Слайдеры параметров -->
+			<div class="control-row">
+				<div class="control-group">
+					<label for="speed-slider">Скорость бегущей строки</label>
+					<input type="range" id="speed-slider" min="2" max="22" value="12">
+				</div>
+
+				<div class="control-group">
+					<label for="size-slider">Зернистость пикселей</label>
+					<input type="range" id="size-slider" min="3" max="10" value="5">
+				</div>
+			</div>
+			
+			<button class="fullscreen-btn" id="manual-fs-btn">Развернуть во весь экран</button>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
